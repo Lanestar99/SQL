@@ -1,0 +1,11 @@
+CREATE TABLE Bikes (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, rating INTEGER, price INTEGER);
+INSERT INTO Bikes VALUES(1,"red",3,4,30);
+INSERT INTO Bikes VALUES(2,"blue",3,5,25);
+INSERT INTO Bikes VALUES(3,"green",3,2,20);
+INSERT INTO Bikes VALUES(4,"black",3,5,35);
+INSERT INTO Bikes VALUES(5,"white",3,3,15);
+SELECT * FROM Bikes;
+SELECT * FROM Bikes WHERE rating >=3 ORDER BY price asc; 
+Create table & makes store table that shows price and rating 
+insert is putting in values into the table 
+select is sorting the data based off a vaulue that is entered.
