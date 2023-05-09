@@ -1,0 +1,60 @@
+CREATE TABLE Actors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    nationality TEXT,
+    weight INTEGER);
+    
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Tom Cruise", 60, "US",150);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Chris Hemsworth", 38, "Australia", 215);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Will Smith", 53, "US", 195);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Jennifer Lopez", 53, "US", 120);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Anne hathaway", 39, "US", 121);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Joaquin Phoenix", 48, "US", 125);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Joaquin Phoenix", 39, "US", 180);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Anne hathaway", 30, "US", 109);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Tom Hanks", 64, "US", 185);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Adam Sandler", 55, "US", 190);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Brad Pitt", 58, "US", 172);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Jennifer Lawrence", 30, "US", 139);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Jamie Foxx", 55, "US", 175);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Scarlett Johansson", 38, "US", 126);
+INSERT INTO Actors (fullname, age, nationality, weight) VALUES ("Johnny Depp", 59, "US", 172);
+
+CREATE table Movies  (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actors_id INTEGER,
+    movie TEXT,
+    year TEXT,
+    Gross_sales INTEGER);
+    
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (1, "Mission impossible", "1996", 3000000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (2, "Thor", "2011", 3820000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (3, "Focus", "2015", 158000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (4, "Maid in Manhattan", "2002", 154000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (5, "Bride wars", "2009", 115000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (6, "Joker", "2019", 1074000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (7, "Her", "2013", 47400000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (8, "Les Miserables", "2012", 309000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (9, "Finch", "2021", 12000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (10, "Muder Mystery", "2023", 64000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (11, "Bullet Train", "2022", 100000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (12, "Hunger Games", "2012", 2970000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (13, "Django Unchained", "2012", 426000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (14, "Black Widow", "2021", 379000000);
+INSERT INTO Movies (actors_id, movie,year, Gross_sales) VALUES (15, "Pirates of the Caribbean 1", "2003", 654000000);
+
+SELECT actors.fullname, movies.movie, movies.year
+FROM Actors
+Join Movies
+ON actors.id = actors_id;
+
+SELECT actors.fullname, actors.age, actors.weight, movies.movie, movies.year
+FROM Actors
+Join Movies
+ON actors.id = actors_id;
+
+SELECT actors.fullname, movies.movie, movies.Gross_sales
+FROM Movies
+Join Actors
+ON actors.id= actors_id;
